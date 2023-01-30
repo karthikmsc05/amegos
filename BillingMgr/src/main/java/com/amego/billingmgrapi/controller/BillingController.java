@@ -75,6 +75,11 @@ public class BillingController {
 	   return billingDetailsRepository.findAll(); 
    }
    
+   @GetMapping("/getBillListByAmego/{name}") 
+   public List<BillingDetails> getAllBillDetailsByAmego(@PathVariable(value = "name") String name) { 
+	   return billingDetailsRepository.findByAmego(name); 
+   }
+   
    @PostMapping("/createBillDetail") 
    public BillingDetails createBillingDetails(@RequestBody BillingDetails billingDetails) {
 	   
